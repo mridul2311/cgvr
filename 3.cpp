@@ -43,17 +43,11 @@ void spinDisplay() {
 
 void mouse1(int button, int state, int x, int y) {
 
-	switch (button) {
-	case GLUT_LEFT_BUTTON:
-		if (state == GLUT_DOWN)
+	if (button== GLUT_LEFT_BUTTON && state == GLUT_DOWN) 
 			glutIdleFunc(spinDisplay);
-		break;
-	case GLUT_RIGHT_BUTTON:
-		if (state == GLUT_DOWN)
+	else if(button== GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
 			glutIdleFunc(NULL);
-		break;
-	default:break;
-	}
+		
 }
 void main(int argc, char* argv[])
 {
